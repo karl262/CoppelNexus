@@ -2,6 +2,7 @@ import BottomTab from '@/components/BottomTabMenu';
 import TopNavbar from '@/components/NavTop';
 import React from 'react';
 import { View } from 'react-native';
+import ProgressTabs from '@/components/ProgressTabs';
 
 export default function ProgressScreen() {
     return (
@@ -9,7 +10,7 @@ export default function ProgressScreen() {
       <TopNavbar />
 
       <View className="flex-1">
-        {/* contenido principal */}
+        <ProgressTabs />
       </View>
 
       <BottomTab />

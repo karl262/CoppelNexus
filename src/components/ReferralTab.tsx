@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, Text, View, TextInput } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
-import { palette } from '@/theme/colors';
+import { palette } from '@/themes/colors';
 
 interface Referral {
   businessName: string;
