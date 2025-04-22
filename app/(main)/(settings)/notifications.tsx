@@ -78,7 +78,7 @@ function SettingSwitch({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: palette.gray50,
+    backgroundColor: palette.gray100,
   },
   header: {
     flexDirection: 'row',
