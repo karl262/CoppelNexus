@@ -26,7 +26,7 @@ export default function ProfileScreen() {
         <View className="mb-4">
           <Text className="text-sm text-gray-500 mb-1">Nombre completo</Text>
           <Text className="text-base text-black font-medium">
-            Andrea Fuentes Rodríguez
+            Christian Serrano Puertos
           </Text>
         </View>
 
