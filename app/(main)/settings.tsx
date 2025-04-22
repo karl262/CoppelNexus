@@ -50,6 +50,17 @@ export default function SettingsScreen() {
           />
         </View>
       </View>
+
+      <View className="px-4 mt-8">
+        <Text className="text-base font-semibold text-gray-800 mb-3">Cuenta</Text>
+        <View className="flex-row flex-wrap gap-4">
+          <SettingsGrid
+            icon={Icons.LogOut}
+            label="Cerrar Sesión"
+            onPress={() => console.log('Cerraste Sesión')}
+          />
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
