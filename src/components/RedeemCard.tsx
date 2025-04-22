@@ -20,13 +20,11 @@ const RedeemCard: React.FC<RedeemCardProps> = ({
     <Container 
       className={`bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center ${className}`}
     >
-      {/* Imagen: Ancho completo, aspecto MÁS ANCHO, resizeMode cover, redondeo superior */}
       <Image 
         source={image}
         className="w-full aspect-[2/1] rounded-t-md"
         resizeMode="cover"
       />
-      {/* Contenedor de Texto: Ocupa espacio restante, padding, centrado */}
       <View className="flex-1 p-3 flex justify-center items-center w-full">
         <Text 
           className="text-center font-semibold text-gray-700"
