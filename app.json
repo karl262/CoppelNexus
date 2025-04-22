@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "CoppelNexus",
+    "slug": "CoppelNexus",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/logos/LOGO_COPPEL_AMARILLO-10.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FFDC35"
+    },
+    "icon": "./assets/images/logos/LOGO_COPPEL_AMARILLO-10.png",
+    "ios": {
+      "icon": "./assets/images/logos/LOGO_COPPEL_AZUL-09.png",
+      "supportsTablet": true
+    },
+    "android": {
+      "icon": "./assets/images/logos/LOGO_COPPEL_AZUL-09.png",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logos/LOGO_COPPEL_AZUL-09.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/images/logos/LOGO_COPPEL_AZUL-09.png",
+      "bundler": "metro",
+      "output": "static"
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logos/LOGO_COPPEL_AMARILLO-10.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#FFDC35"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
