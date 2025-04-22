@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import NavTop from '@/components/NavTop';
+import BottomTab from '@/components/BottomTabMenu';
 
 export default function ProfileScreen() {
   return (
@@ -41,6 +42,7 @@ export default function ProfileScreen() {
           </Text>
         </View>
       </ScrollView>
+      <BottomTab />
     </SafeAreaView>
   );
 }
