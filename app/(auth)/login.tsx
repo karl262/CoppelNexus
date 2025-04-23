@@ -33,7 +33,7 @@ export default function Login() {
         // Método a reemplazar con la API mediante environment variables
         const validCredentials = {
             collaboratorNumber: "123456",
-            password: "soyCarlos26_",
+            password: "soyCarlos26&",
         };
 
         if (collaboratorNumber === validCredentials.collaboratorNumber && password === validCredentials.password) {

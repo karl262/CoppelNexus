@@ -2,7 +2,7 @@ import TopNavbar from '@/components/NavTop';
 import BottomTab from '@/components/BottomTabMenu';
 import { ScrollView, View } from 'react-native';
 import WelcomePopUp from '@/components/WelcomePopUp';
-import RewardCard from '@/components/RewardCard';
+import RewardPopUp from '@/components/RewardPopUp';
 import MapPreview from '@/components/MapPreview';
 import { useHomeData } from '@/hooks/useHomeData';
 import { useState } from 'react';
@@ -23,7 +23,7 @@ export default function Home() {
             onClose={() => setShowWelcomeCard(false)} 
           />
         ) : showRewardCard ? (
-          <RewardCard 
+          <RewardPopUp  
             referred={referredInfo} 
             onClose={() => setShowRewardCard(false)} 
           />
