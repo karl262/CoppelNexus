@@ -33,7 +33,7 @@ export default function Login() {
         // Método a reemplazar con la API mediante environment variables
         const validCredentials = {
             collaboratorNumber: "123456",
-            password: "soycarlos26",
+            password: "soyCarlos26_",
         };
 
         if (collaboratorNumber === validCredentials.collaboratorNumber && password === validCredentials.password) {
@@ -94,6 +94,10 @@ export default function Login() {
                                 minLength: {
                                     value: 6,
                                     message: 'La contraseña debe tener al menos 6 caracteres'
+                                },
+                                pattern:{
+                                    value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/,
+                                    message: 'La contraseña debe tener al menos una mayúscula, una minúscula, un número y un carácter especial'
                                 }
                             }}
                             render={({ field: { onChange, onBlur, value } }) => (
