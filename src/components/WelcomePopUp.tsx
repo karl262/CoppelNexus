@@ -1,0 +1,69 @@
+import { View, Text, Image, Animated, Pressable } from 'react-native';
+import { X } from 'lucide-react-native';
+import { useRef, useEffect } from 'react';
+
+export default function WelcomePopUp({ user, onClose }: { user: any; onClose: () => void }) {
+    //Uso de hooks para animación de PopUp
+    const fadeAnim = useRef(new Animated.Value(0)).current;
+    const slideAnim = useRef(new Animated.Value(0)).current;
+
+    useEffect(() => { 
+        Animated.parallel([
+            Animated.timing(fadeAnim, {
+                toValue: 1,
+                duration: 500,
+                useNativeDriver: true,
+            }),
+            Animated.timing(slideAnim, {
+                toValue: 1,
+                duration: 500,
+                useNativeDriver: true,
+            }),
+        ]).start();
+    }, []);
+
+    const handleClose = () => {
+        Animated.parallel([
+            Animated.timing(fadeAnim, {
+                toValue: 0,
+                duration: 500,
+                useNativeDriver: true,
+            }),
+            Animated.timing(slideAnim, {
+                toValue: 0,
+                duration: 500,
+                useNativeDriver: true,
+            }),
+        ]).start(() => onClose());
+    };
+
+    return (
+        <Animated.View
+            style={{
+                opacity: fadeAnim,
+                transform: [
+                    {
+                        translateY: slideAnim.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [50, 0],
+                        }),
+                    },
+                ],
+            }}
+        >
+            <View className="bg-primary p-4 rounded-sm flex-row items-center space-x-4 mb-5">
+                <Pressable
+                    onPress={handleClose}
+                    className="absolute top-2 right-2 z-50"
+                >
+                    <X size={20} color="white" />
+                </Pressable>
+                <Image source={user.image} className="w-16 h-16 rounded-full" />
+                <View>
+                    <Text className="text-white text-lg font-bold ms-2">¡Hola, {user.name}!</Text>
+                    <Text className="text-white text-sm mt-1 ms-2">Zona: {user.zone}</Text>
+                </View>
+            </View>
+        </Animated.View>
+    );
+}

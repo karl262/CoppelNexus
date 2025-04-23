@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View } from 'react-native';
 import RedeemCard from './RedeemCard';
 const MonederoImage = require('../../assets/images/tarjetas/MonederoDigital.png');
@@ -28,15 +28,26 @@ const cardData = [
 ];
 
 const GridRedeem: React.FC = () => {
+  const [visibleCards, setVisibleCards] = useState<Record<string, boolean>>(
+    cardData.reduce((acc, card) => ({ ...acc, [card.id]: true }), {})
+  );
+
+  const handleClose = (id: string) => {
+    setVisibleCards(prev => ({ ...prev, [id]: false }));
+  };
+
   return (
     <View className="flex-row flex-wrap justify-between p-2">
       {cardData.map((card) => (
-        <View key={card.id} className="w-[48%] h-[200px] mb-4 mt-4">
-          <RedeemCard 
-            title={card.title}
-            image={card.image}
-          />
-        </View>
+        visibleCards[card.id] && (
+          <View key={card.id} className="w-[48%] h-[200px] mb-4 mt-4">
+            <RedeemCard 
+              title={card.title}
+              image={card.image}
+              onClose={() => handleClose(card.id)}
+            />
+          </View>
+        )
       ))}
     </View>
   );

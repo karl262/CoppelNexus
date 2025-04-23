@@ -29,8 +29,8 @@ export default function BottomTab() {
 
     const tabs: TabItem[] = [
         { key: 'home', label: 'Inicio', icon: Home, onPress: handleHomePress },
-        { key: 'redeem', label: 'Canjear', icon: ShoppingBag, onPress: handleRedeemPress },
-        { key: 'microentrepreneurRegistry', label: 'Registrar', icon: UserPlusIcon, onPress: handleRegister },
+        { key: 'redeem', label: 'Canjea', icon: ShoppingBag, onPress: handleRedeemPress },
+        { key: 'microentrepreneurRegistry', label: 'Registro', icon: UserPlusIcon, onPress: handleRegister },
         { key: 'progress', label: 'Progreso', icon: BarChart2, onPress: handleProgressPress },
         { key: 'profile', label: 'Perfil', icon: User, onPress: handleProfilePress },
     ];
@@ -40,19 +40,27 @@ export default function BottomTab() {
             {tabs.map(({ key, label, icon: Icon, onPress }) => (
                 <Pressable
                     key={key}
-                    className="items-center"
+                    className={`items-center ${key === 'microentrepreneurRegistry' ? 'relative -top-7' : ''}`}
                     onPress={() => {
                         setCurrent(key);
                         onPress();
                     }}
                 >
-                    <Icon
-                        size={22}
-                        color={current === key ? palette.primary : '#777'}
-                    />
+                    {key === 'microentrepreneurRegistry' ? (
+                        <View className="bg-primary rounded-full p-3">
+                            <Icon
+                                size={32}
+                                color="white"
+                            />
+                        </View>
+                    ) : (
+                        <Icon
+                            size={28}
+                            color={current === key ? palette.primary : '#777'}
+                        />
+                    )}
                     <Text
-                        className={`text-xs mt-1 ${current === key ? 'text-primary' : 'text-[#777]'
-                            }`}
+                        className={`text-xs mt-1 ${current === key ? 'text-primary' : 'text-[#777]'}`}
                     >
                         {label}
                     </Text>
