@@ -9,9 +9,10 @@ module.exports = {
     extend: {
       colors: {
         // nuevos valores principales
-        primary: '#006FB9',  // antes '#215AA8'
-        accent:  '#FFDC35',  // antes '#FFDC32'
+        primary: '#006FB9',
+        accent:  '#FFDC35',
 
+        // escala de colores azules
         primary50:  '#FAFBFC',
         primary100: '#F1F4FA',
         primary150: '#D9E3F2',
@@ -21,20 +22,27 @@ module.exports = {
         primary500: '#194B7B',
         primary600: '#103151',
 
+        // escala de colores amarillos
         accent100: '#FFF9E0',
         accent200: '#FFEC99',
         accent300: '#FFDC35',
         accent400: '#D3B318',
         accent500: '#847220',
+        
+        // escala de colores semánticos
+        success400:    '#2E8241',
+        error400:      '#BA4B44',
+        warning400:    '#AB5C00',
+        info400:       '#0076A9',
+        visited400:    '#5548E9',
+        aprove400:     '#E5FFEB',
+        error100:      '#FFF0EF',
+        warning100:    '#FFF4E8',
+        info100:       '#E4F7FF',
+        visited100:    '#5548E9',
 
-        success:    '#2E8241',
-        error:      '#BA4B44',
-        warning:    '#AB5C00',
-        info:       '#0076A9',
-        visited:    '#5548E9',
-
-        white:      '#FFFFFF',
-        black:      '#000000',
+        // escala de colores grises
+        white0:      '#FFFFFF',
         gray100:    '#EEDEDD',
         gray200:    '#BEBEBD',
         gray300:    '#9B9A98',
@@ -43,7 +51,9 @@ module.exports = {
         gray600:    '#3B3A37',
         gray700:    '#1B1A16',
         transparent:'rgba(255,255,255,0.01)',
-        overlay:    'rgba(27,26,22,0.16)',
+
+        // escala de colores Overlay
+        overlay700: '#1B1A1628',
 
         textPrimary:   '#1B1A16',
         textSecondary: '#595955',

@@ -21,7 +21,6 @@ export default function Login() {
         control,
         handleSubmit,
         formState: { errors, touchedFields },
-        trigger,
     } = useForm<LoginFormData>({
         mode: 'onBlur',
     });
