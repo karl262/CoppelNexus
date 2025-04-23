@@ -54,9 +54,7 @@ export const CardRedeemDetail = ({ imageSource, onRedeem }: CardRedeemDetailProp
                 </Pressable>
 
                 <View className="mt-6 space-y-4">
-                    <Text className="text-black text-lg font-bold" style={{ textAlign: 'center', marginTop: -22 }}>
-                        30% de descuento en tienda
-                    </Text>
+                
 
                     <Text className="text-gray-800 text-base leading-6"
                         style={{ paddingHorizontal: 15 }}>
