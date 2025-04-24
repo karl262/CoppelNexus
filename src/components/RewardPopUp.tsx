@@ -35,7 +35,7 @@ export default function RewardPopUp({ referred, onClose }: { referred: any; onCl
       }}
       className="w-full px-6 mt-4"  // ocupa todo el ancho + margen superior
     >
-      <View className="bg-green-600 p-4 rounded-lg">
+      <View className=" p-4 rounded-sm bg-info">
         {onClose && (
           <Pressable onPress={handleClose} className="absolute top-2 right-2 z-50">
             <X size={20} color="white" />
