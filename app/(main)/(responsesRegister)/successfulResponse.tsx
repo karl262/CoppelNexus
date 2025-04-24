@@ -36,7 +36,7 @@ export default function ReferralResult() {
       <View style={styles.safe}>
         {/* Encabezado */}
         <View className="flex-row items-center px-4 bg-primary" style={{ paddingVertical: 12 }}>
-          <Pressable onPress={() => router.back()}>
+          <Pressable onPress={() => router.replace('/(main)/home')}>
             <ArrowLeft color={palette.white} size={30} />
           </Pressable>
           <Text className="flex-1 font-bold text-center ms-2" style={{ color: palette.white, fontSize: 22 }}>
@@ -67,7 +67,7 @@ export default function ReferralResult() {
             <View style={styles.row}>
               <Text style={styles.label}>Propietario:</Text>
               <Text style={styles.value}>
-                {`${data.ownerName ?? ''} ${data.ownerLastName ?? ''}`.trim()}
+                {`${data.ownerName ?? ''} ${data.ownerFirstLastName ?? ''} ${data.ownerSecondLastName ?? ''}`.trim()}
               </Text>
             </View>
 

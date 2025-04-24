@@ -3,7 +3,8 @@ import { useRouter } from 'expo-router';
 
 export type FormData = {
   ownerName: string;
-  ownerLastName: string;
+  ownerFirstLastName: string;
+  ownerSecondLastName: string;
   phone: string;
   email: string;
 
@@ -24,7 +25,8 @@ export function useRegisterClient() {
   const [step, setStep] = useState(1);
   const [form, setForm] = useState<FormData>({
     ownerName: '',
-    ownerLastName: '',
+    ownerFirstLastName: '',
+    ownerSecondLastName: '',
     phone: '',
     email: '',
     businessName: '',
@@ -48,7 +50,7 @@ export function useRegisterClient() {
   const canNext = (): boolean => {
     switch (step) {
       case 1:
-        return !!(form.ownerName && form.ownerLastName && form.phone);
+        return !!(form.ownerName && form.ownerFirstLastName && form.ownerSecondLastName && form.phone);
       case 2:
         return !!(form.businessName && form.businessType);
       case 3:
@@ -84,7 +86,8 @@ export function useRegisterClient() {
   
     const dataToSend = {
       ownerName: form.ownerName,
-      ownerLastName: form.ownerLastName,
+      ownerFirstLastName: form.ownerFirstLastName,
+      ownerSecondLastName: form.ownerSecondLastName,
       phone: form.phone,
       businessName: form.businessName,
       businessType: form.businessType,

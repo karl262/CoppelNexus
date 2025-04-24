@@ -51,13 +51,22 @@ export default function MicroEntrepreneurRegistry() {
                   onChangeText={(v) => update('ownerName', v)}
                 />
     
-                <Text className="mb-1 text-gray-700">Apellidos del propietario *</Text>
+                <Text className="mb-1 text-gray-700">Primer Apellido</Text>
                 <TextInput
                   className="w-full border border-gray-200 bg-white rounded-lg px-4 py-3 mb-4 text-base text-black"
                   placeholder="Ej: Pérez Ocampo"
                   placeholderTextColor={palette.gray400}
-                  value={form.ownerLastName}
-                  onChangeText={(v) => update('ownerLastName', v)}
+                  value={form.ownerFirstLastName}
+                  onChangeText={(v) => update('ownerFirstLastName', v)}
+                />
+
+                <Text className="mb-1 text-gray-700">Segundo Apellido</Text>
+                <TextInput
+                  className="w-full border border-gray-200 bg-white rounded-lg px-4 py-3 mb-4 text-base text-black"
+                  placeholder="Ej: Pérez Ocampo"
+                  placeholderTextColor={palette.gray400}
+                  value={form.ownerSecondLastName}
+                  onChangeText={(v) => update('ownerSecondLastName', v)}
                 />
     
                 <Text className="mb-1 text-gray-700">Teléfono *</Text>

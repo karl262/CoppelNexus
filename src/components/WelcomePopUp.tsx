@@ -4,22 +4,21 @@ import { useRef, useEffect } from 'react';
 
 export default function WelcomePopUp({ user, onClose }: { user: any; onClose: () => void }) {
   const { width } = useWindowDimensions();
-  const avatarSize = width * 0.16; // 16% del ancho de pantalla
+  const avatarSize = width * 0.14; // 14% del ancho para que no ocupe tanto
 
-  // Hooks de animación
-  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const fadeAnim  = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     Animated.parallel([
-      Animated.timing(fadeAnim, { toValue: 1, duration: 500, useNativeDriver: true }),
-      Animated.timing(slideAnim, { toValue: 1, duration: 500, useNativeDriver: true }),
+      Animated.timing(fadeAnim,  { toValue: 1, duration: 400, useNativeDriver: true }),
+      Animated.timing(slideAnim, { toValue: 1, duration: 400, useNativeDriver: true }),
     ]).start();
   }, []);
 
   const handleClose = () => {
     Animated.parallel([
-      Animated.timing(fadeAnim, { toValue: 0, duration: 500, useNativeDriver: true }),
-      Animated.timing(slideAnim, { toValue: 0, duration: 500, useNativeDriver: true }),
+      Animated.timing(fadeAnim,  { toValue: 0, duration: 300, useNativeDriver: true }),
+      Animated.timing(slideAnim, { toValue: 0, duration: 300, useNativeDriver: true }),
     ]).start(onClose);
   };
 
@@ -27,27 +26,25 @@ export default function WelcomePopUp({ user, onClose }: { user: any; onClose: ()
     <Animated.View
       style={{
         opacity: fadeAnim,
-        transform: [{
-          translateY: slideAnim.interpolate({ inputRange: [0,1], outputRange: [50,0] })
-        }],
+        transform: [{ translateY: slideAnim.interpolate({ inputRange: [0,1], outputRange: [30,0] }) }],
       }}
-      className="w-full px-6"  // 100% ancho + padding horizontal
+      className="w-full mb-4"  // separación inferior
     >
-      <View className="bg-primary p-4 rounded-lg flex-row items-center space-x-4">
-        <Pressable onPress={handleClose} className="absolute top-2 right-2 z-50">
+      <View className="bg-primary rounded-lg shadow-md flex-row items-center p-4">
+        <Pressable onPress={handleClose} className="absolute top-2 right-2">
           <X size={20} color="white" />
         </Pressable>
         <Image
           source={user.image}
-          style={{
-            width: avatarSize,
-            height: avatarSize,
-            borderRadius: avatarSize / 2,
-          }}
+          style={{ width: avatarSize, height: avatarSize, borderRadius: avatarSize / 2 }}
         />
-        <View>
-          <Text className="text-white text-lg font-bold">¡Hola, {user.name}!</Text>
-          <Text className="text-white text-sm mt-1">Zona: {user.zone}</Text>
+        <View className="ml-4">
+          <Text className="text-white text-lg font-bold">
+            ¡Hola, {user.name}!
+          </Text>
+          <Text className="text-white text-sm mt-1">
+            Zona: {user.zone}
+          </Text>
         </View>
       </View>
     </Animated.View>

@@ -10,26 +10,35 @@ import { useState } from 'react';
 export default function Home() {
   const { user, referredInfo } = useHomeData();
   const [showWelcomeCard, setShowWelcomeCard] = useState(true);
-  const [showRewardCard, setShowRewardCard] = useState(true);
+  const [showRewardCard, setShowRewardCard] = useState(false);
 
   return (
     <View className="flex-1 bg-white">
       <TopNavbar />
 
-      <ScrollView className="flex-1 px-4 py-4 space-y-4">
-        {showWelcomeCard ? (
-          <WelcomePopUp 
-            user={user} 
-            onClose={() => setShowWelcomeCard(false)} 
+      {/* Contenedor absoluto para popups */}
+      <View className="absolute inset-x-0 top-28 px-4 z-20">
+        {showWelcomeCard && (
+          <WelcomePopUp
+            user={user}
+            onClose={() => {
+              // Oculta welcome & muestra reward en un solo paso
+              setShowWelcomeCard(false);
+              setShowRewardCard(true);
+            }}
           />
-        ) : showRewardCard ? (
-          <RewardPopUp  
-            referred={referredInfo} 
-            onClose={() => setShowRewardCard(false)} 
+        )}
+        {showRewardCard && (
+          <RewardPopUp
+            referred={referredInfo}
+            onClose={() => setShowRewardCard(false)}
           />
-        ) : null}
+        )}
+      </View>
+
+      <ScrollView className="flex-1 px-4 pt-4">
         <MapPreview />
-      </ScrollView> 
+      </ScrollView>
 
       <BottomTab />
     </View>

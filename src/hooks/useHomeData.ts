@@ -6,7 +6,7 @@ export const useHomeData = () => {
     };
   
     const referredInfo = {
-      completedModules: 1,
+      completedModules: 20,
       rewardName: 'Tarjeta de regalo',
       status: 'Disponible',
     };
