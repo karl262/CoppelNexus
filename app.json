@@ -21,7 +21,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logos/LOGO_COPPEL_AZUL-09.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.karl_26.CoppelNexus"
     },
     "web": {
       "favicon": "./assets/images/logos/LOGO_COPPEL_LETRA-09.png",
@@ -40,6 +41,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1c844c46-f562-4816-b5d8-85c8f3f6e050"
+      }
     }
   }
 }

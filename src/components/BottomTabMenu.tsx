@@ -31,7 +31,7 @@ export default function BottomTab() {
         { key: 'home', label: 'Inicio', icon: Home, onPress: handleHomePress },
         { key: 'redeem', label: 'Canjea', icon: ShoppingBag, onPress: handleRedeemPress },
         { key: 'microentrepreneurRegistry', label: 'Registro', icon: UserPlusIcon, onPress: handleRegister },
-        { key: 'progress', label: 'Progreso', icon: BarChart2, onPress: handleProgressPress },
+        { key: 'progress', label: 'Seguimiento', icon: BarChart2, onPress: handleProgressPress },
         { key: 'profile', label: 'Perfil', icon: User, onPress: handleProfilePress },
     ];
 

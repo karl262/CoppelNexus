@@ -9,7 +9,7 @@ export default function ProgressTabs() {
   return (
     <View className="flex-1">
       <View className="flex-row justify-around border-b border-gray-200 bg-white">
-        {['Desempeño', 'Mis referidos'].map((label, index) => {
+        {['Todos', 'Bajo rendimiento'].map((label, index) => {
           const key = index === 0 ? 'performance' : 'referrals';
           const isActive = activeTab === key;
           return (
