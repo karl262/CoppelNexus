@@ -7,19 +7,46 @@ import BottomTab from '@/components/BottomTabMenu';
 export default function ProfileScreen() {
   return (
     <SafeAreaView className="flex-1 bg-white">
-
       <NavTop />
 
-      <View className="items-center -mt-2">
-        <View className="w-32 h-32 rounded-full overflow-hidden border-4 border-white">
-          <Image
-            source={require('~assets/images/profile-image.png')}
-            className="w-full h-full"
-            resizeMode="cover"
-          />
+      {/* Encabezado azul con patrón y foto */}
+      <View
+        style={{
+          backgroundColor: '#006FB9',
+          alignItems: 'center',
+          paddingBottom: 40,
+          position: 'relative',
+        }}
+      >
+        {/* Patrón de puntos decorativos */}
+        <View
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 16,
+            right: 0,
+            bottom: 0,
+            opacity: 0.1,
+          }}
+        >
+          <Text style={{ color: 'white', fontSize: 20 }}>. . . . . . .</Text>
+          <Text style={{ color: 'white', fontSize: 20 }}>. . . . . . .</Text>
+          <Text style={{ color: 'white', fontSize: 20 }}>. . . . . . .</Text>
+        </View>
+
+        {/* Imagen de perfil */}
+        <View className="items-center mt-4">
+          <View className="w-32 h-32 rounded-full overflow-hidden border-4 border-white">
+            <Image
+              source={require('../../assets/images/profile-image.png')}
+              style={{ width: 120, height: 120, borderRadius: 999 }}
+              resizeMode="cover"
+            />
+          </View>
         </View>
       </View>
 
+      {/* Datos del usuario */}
       <ScrollView className="px-6 mt-6">
         <Text className="text-xl font-bold mb-4 text-black">Mis datos</Text>
 
@@ -42,6 +69,7 @@ export default function ProfileScreen() {
           </Text>
         </View>
       </ScrollView>
+
       <BottomTab />
     </SafeAreaView>
   );
