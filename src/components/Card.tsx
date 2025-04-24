@@ -1,50 +1,39 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, Image, ImageSourcePropType } from 'react-native';
+import { View, TouchableOpacity, Image, ImageSourcePropType } from 'react-native';
 
 interface CardProps {
-  title?: string;
-  children?: React.ReactNode;
   onPress?: () => void;
   className?: string;
-  sideImage?: ImageSourcePropType;
+  backgroundImage?: ImageSourcePropType;
+  children?: React.ReactNode;
 }
 
 const Card: React.FC<CardProps> = ({ 
-  title, 
-  children, 
-  onPress, 
+  onPress,
   className = '',
-  sideImage
+  backgroundImage = require('assets/images/tarjetas/Banner.png'),
+  children
 }) => {
   const CardContainer = onPress ? TouchableOpacity : View;
 
   return (
     <CardContainer
-      className={`overflow-hidden bg-[#006FB9] p-4 flex-row items-center ${className}`}
+      className={`w-full min-h-[150px] overflow-hidden ${className}`}
       onPress={onPress}
     >
-      <View className="w-1/2">
-        {title && (
-          <Text className="text-xl font-bold text-white mb-1">
-            {title}
-          </Text>
-        )}
-        {children && (
-          <Text className="text-white">
-            {children}
-          </Text>
-        )}
+      {/* Imagen de fondo */}
+      <Image
+        source={backgroundImage}
+        className="w-full h-full absolute"
+        resizeMode="cover"
+      />
+      
+      {/* Capa de contenido */}
+      <View className="p-4 z-10">
+        {children}
       </View>
-      {sideImage && (
-        <View className="w-1/2 flex justify-center items-center">
-          <Image
-            source={sideImage}
-            className="w-4 h-4"
-          />
-        </View>
-      )}
     </CardContainer>
   );
 };
 
-export default Card; 
+export default Card;
