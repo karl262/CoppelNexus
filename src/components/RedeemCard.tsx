@@ -18,16 +18,21 @@ const RedeemCard: React.FC<RedeemCardProps> = ({
 
   return (
     <Container 
-      className={`bg-white rounded-lg shadow-md overflow-hidden flex flex-col items-center ${className}`}
+      className={`w-full bg-white rounded-lg shadow-md overflow-hidden ${className}`}
     >
-      <Image 
-        source={image}
-        className="w-full aspect-[2/1] rounded-t-md"
-        resizeMode="cover"
-      />
-      <View className="flex-1 p-3 flex justify-center items-center w-full">
+      {/* Contenedor de imagen con relación de aspecto */}
+      <View className="w-full aspect-[1.5]"> 
+        <Image 
+          source={image}
+          className="w-full h-full"
+          resizeMode="cover"
+        />
+      </View>
+      
+      {/* Contenido textual */}
+      <View className="p-4">
         <Text 
-          className="text-center font-semibold text-gray-700"
+          className="text-base font-semibold text-gray-800 text-center"
           numberOfLines={2} 
         >
           {title}
@@ -37,4 +42,4 @@ const RedeemCard: React.FC<RedeemCardProps> = ({
   );
 };
 
-export default RedeemCard; 
+export default RedeemCard;

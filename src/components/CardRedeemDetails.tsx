@@ -8,19 +8,19 @@ interface CardRedeemDetailProps {
 
 export const CardRedeemDetail = ({ imageSource, onRedeem }: CardRedeemDetailProps) => {
     return (
-        <View className="flex-1 mx-4 mt-4 mb-6">
+        <View className="flex-1 mx-4 mt-4 mb-6" 
+            style={{borderRadius:30}}>
             <Text className="text-black text-lg font-bold" style={{ marginTop: -10, marginBottom: 10 }}>
                 30% de descuento en tienda
             </Text>
             {/* Sección Imagen */}
-            <View className="bg-white rounded-t-2xl h-50">
+            <View className="bg-white rounded-t-3xl h-50">
                 <Image
                     source={imageSource}
                     resizeMode="contain"
                     className="w-full h-full"
                     style={{
-                        marginTop: -60,
-                        marginBottom: -30,
+                        marginTop:-20,
                         transform: [{ scale: 1.01 }],
                         width: '100%',
                     }}
